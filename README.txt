@@ -1,4 +1,4 @@
-FSize.js
+﻿FSize.js
 ===============================================================================
 This is a library providing two methods for parsing file sizes and printing them in a pleasant format. It is (almost, see comment in source) stand alone. It should also be portable on most platforms supporting JavaScript. (Although I only tested it in Firefox 36 and WSH 5.8.)
 

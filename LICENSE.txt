@@ -1,4 +1,4 @@
-Copyright (c) 2015, David Lichti <dlichtistw@gmx.de>
+﻿Copyright (c) 2015, David Lichti <dlichtistw@gmx.de>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
