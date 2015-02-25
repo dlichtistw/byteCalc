@@ -1,19 +1,13 @@
 ﻿// byteCalc - Calculator for file sizes
-// Copyright (C) 2015 David Lichti <dlichtistw@gmx.de>\n\
+// Copyright (C) 2015 David Lichti <dlichtistw@gmx.de>
 // This prgram is distributed under the BSD 3-Clause license
 
 
-// Configuration options
-var conf = {
-	'ver': '1.0.0',
-	'dec': 6 // Decimals in scientific notation
-};
-	
 // Messages for output
 var msg = {
 	'error': 'Eingabe konnte nicht verarbeitet werden. (h für Hilfe)\n',
 	'res': 'Datenmenge: ',
-	'reb': '           ', // used for alignment after msg.res. Should be one character shorter than msg.res
+	'reb': '           ', // used for alignment after msg.res, should be all spaces and msg.res.length - 1 long
 	'help': '\
 Erlaubte Operationen sind:\n\
       Byte    Initialisiere Berechnung mit [Byte]\n\
@@ -21,7 +15,7 @@ Erlaubte Operationen sind:\n\
     - Byte    Subtrahiere [Byte]\n\
     * Zahl    Multipliziere mit [Zahl]\n\
     / Zahl    Dividiere durch [Zahl]\n\
-    =         Ergebnis ohne Einheiten\n\
+    =         Ergebnis ohne Präfix\n\
     c Bytes   Konvertiere [Byte] in ein schönes Format\n\
 \n\
     h         Diese Hilfe anzeigen\n\

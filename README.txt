@@ -1,6 +1,6 @@
 ﻿FSize.js
 ===============================================================================
-This is a library providing two methods for parsing file sizes and printing them in a pleasant format. It is (almost, see comment in source) stand alone. It should also be portable on most platforms supporting JavaScript. (Although I only tested it in Firefox 36 and WSH 5.8.)
+This is a library providing two methods for parsing file sizes and printing them in a pleasant format. It is (almost, see comment in source) stand alone. It should also be portable on most platforms supporting JavaScript. (Although I only tested it in Firefox 36, WSH 5.7 and WSH 5.8.)
 
 
 byteCalc.wsf
@@ -18,10 +18,10 @@ Allowed operations are:
     * number  multiply with [number]
     / number  divide by [number]
     =         result without units
-	c bytes   convert [bytes] to pleasant form
+    c bytes   convert [bytes] to pleasant form
 
     h         Show this help
-	l         Show license
+    l         Show license
     q         Quit program
 
 Allowed units are:
@@ -46,4 +46,4 @@ License
 ===============================================================================
 This project is published under the BSD 3-Clause license. See LICENSE.txt for the exact terms.
 
-Contribution of improvements are welcome, but not mandatory.
+Contributions of improvements are welcome, but not mandatory.

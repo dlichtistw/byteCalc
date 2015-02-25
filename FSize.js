@@ -1,5 +1,5 @@
 ﻿// byteCalc - Calculator for file sizes
-// Copyright (C) 2015 David Lichti <dlichtistw@gmx.de>\n\
+// Copyright (C) 2015 David Lichti <dlichtistw@gmx.de>
 // This prgram is distributed under the BSD 3-Clause license
 
 
