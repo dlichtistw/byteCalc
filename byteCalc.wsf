@@ -1,0 +1,83 @@
+<!--
+byteCalc - Calculator for file sizes
+Copyright (C) 2015 David Lichti <dlichtistw@gmx.de>\n\
+This prgram is distributed under the BSD 3-Clause license
+-->
+<job id="byteCalc">
+	<script language="JScript" src="FSize.js"/><!-- Library doing the actual computation -->
+	<script language="JScript" src="strings.js"/><!-- Configuration and strings for output -->
+	<script language="JScript">
+		var res = 0;
+		var inp = '';
+
+		WScript.Echo(msg.header);
+
+		// User interface
+		WScript.StdOut.Write(msg.res);
+		do {
+			inp = WScript.StdIn.ReadLine();
+			
+			switch (inp.charAt(0)) {
+			case '+':
+				if ((s = parseFSize(inp.substr(1))) !== false) {
+					res += s;
+				} else {
+					WScript.Echo(msg.error);
+				}
+				break;
+			case '-':
+				if ((s = parseFSize(inp.substr(1))) !== false) {
+					res -= s;
+				} else {
+					WScript.Echo(msg.error);
+				}
+				break;
+			case '*':
+				if (isNaN(inp.substr(1))) {
+					WScript.Echo(msg.error);
+				} else {
+					res *= inp.substr(1);
+				}
+				break;
+			case '/':
+				if (isNaN(inp.substr(1))) {
+					WScript.Echo(msg.error);
+				} else {
+					res /= inp.substr(1);
+				}
+				break;
+			case '=':
+				WScript.Echo(msg.res + group(res) + ' B');
+				WScript.StdOut.Write(msg.reb);
+				continue;
+				break;
+			case 'c':
+				WScript.Echo(msg.res + printFSize(parseFSize(inp.substr(1))));
+				break;
+			case 'q':
+				WScript.Echo(msg.res + printFSize(res));
+				WScript.Quit(0);
+				break;
+			case 'l':
+				WScript.Echo(msg.license);
+				break;
+			case 'h':
+			case '?':
+				WScript.Echo(msg.help);
+				break;
+			case ' ':
+			default:
+				if ((init = parseFSize(inp)) !== false) {
+					res = init;
+					WScript.StdOut.Write(msg.reb);
+					continue;
+				} else {
+					WScript.Echo(msg.error);
+					break;
+				}
+			}
+			WScript.Echo(msg.res + printFSize(res));
+			WScript.StdOut.Write(msg.reb);
+		} while (inp.charAt(0) != 'q');
+	</script>
+</job>
